@@ -1,1 +1,1 @@
-ifconfig -a link | awk '/ether/{print$2}'
+ifconfig -a |grep "ether" | sed "s/^.*ether //" | sed "s/ .*\$//"
